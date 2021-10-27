@@ -1,0 +1,34 @@
+-- create 6 users --
+INSERT INTO users (first_name,last_name) VALUES ('Bob','Marley');
+INSERT INTO users (first_name,last_name) VALUES ('Kathryn','Williams');
+INSERT INTO users (first_name,last_name) VALUES ('Joseph','Smith');
+INSERT INTO users (first_name,last_name) VALUES ('Jessica','Nicole');
+INSERT INTO users (first_name,last_name) VALUES ('Erica','Simmons');
+INSERT INTO users (first_name,last_name) VALUES ('Victoria','Gill');
+
+-- have user 1 be friends with users 2,4, and 6 --
+
+insert into relationships (user_id,friend_id) values (1,2),(1,4),(1,6);
+
+-- have user 2 be friends with users 1,3, and 5 --
+
+insert into relationships (user_id,friend_id) values (2,1),(2,3),(2,5);
+
+-- have user 3 be friends with users 2 and 5 --
+
+insert into relationships (user_id,friend_id) values (3,2),(3,5);
+
+-- have user 4 be friends with user 3 --
+insert into relationships (user_id,friend_id) values (4,3);
+
+-- have user 5 be friends with users 1 and 6 --
+insert into relationships (user_id,friend_id) values (5,1),(5,6);
+
+-- have user 6 be friends with users 2 and 3 --
+insert into relationships (user_id,friend_id) values (6,2),(6,3);
+
+-- display the relationships create as shown in the above image --
+
+SELECT * FROM users AS u
+JOIN relationships AS r 
+LEFT JOIN users as users2 ON r.user_id = users2.id;

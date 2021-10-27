@@ -1,0 +1,46 @@
+/* Created Users */
+INSERT INTO users (first_name,last_name,email)
+VALUES ('Claude','Will','cwill@email.com');
+
+INSERT INTO users (first_name,last_name,email)
+VALUES ('Bob','Williams','b.williams@email.com');
+
+INSERT INTO users (first_name,last_name,email)
+VALUES ('Tom','Brady','bradyT@email.com');
+
+/* retrieve users */
+SELECT * FROM users;
+
+/* retrieve first user by email */
+SELECT *
+FROM users
+GROUP BY email 
+LIMIT 1;
+
+/* retrieve last user using their id */
+
+SELECT *
+FROM users
+ORDER BY id DESC
+LIMIT 1;
+
+/* Change user with id = 3 so last name is Pancakes */
+UPDATE users
+SET last_name = 'Pancakes'
+WHERE id = 3;
+
+/* delete user with id=2 from database */
+DELETE FROM users
+WHERE id = 2;
+
+/* get all users sorted by first name */
+
+SELECT *
+FROM users
+GROUP BY first_name;
+
+/* get all the users sorted by first name in descending order */
+
+SELECT *
+FROM users
+ORDER BY first_name DESC;

@@ -1,0 +1,44 @@
+-- create 3 dojos --
+INSERT INTO dojos (name) VALUES ('Pineapple');
+INSERT INTO dojos (name) VALUES ('Belongs On');
+INSERT INTO dojos (name) VALUES ('Pizza');
+
+-- delete all 3 dojos --
+DELETE FROM dojos WHERE id between 1 and 3;
+
+(DELETE FROM dojos; would do this, but a certain setting would need to be changed to allow it)
+
+-- add 3 more dojos --
+
+INSERT INTO dojos (name) VALUES ('Pizza Dojo');
+INSERT INTO dojos (name) VALUES ('Coding Dojo');
+INSERT INTO dojos (name) VALUES ('A Dojo');
+
+-- create 3 ninjas for first dojo --
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Bob','Williams', 24,4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES ("Will","Bob","15", "4");
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Tom','Brady',50,4);
+
+-- create 3 ninjas for second dojo --
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Will','Williams',20,5);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Anna','McMillian',25,5);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUE ('Sarah','Thomas', 30, 5);
+
+-- create 3 ninjas for third dojo --
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Jessica','Jones',34, 6);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Joseph','Will',34,6);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Kathryn', 'Nicoles',24,6);
+
+-- retrieve all ninjas from first dojo --
+
+SELECT * FROM ninjas WHERE dojo_id = 4;
+
+-- retrieve all ninjas from second dojo --
+
+SELECT * FROM ninjas WHERE dojo_id = 5;
+
+-- retrieve all ninjas from third dojo --
+SELECT * FROM ninjas WHERE dojo_id = 6;
